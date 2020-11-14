@@ -43,6 +43,10 @@ public class AccountInfoServiceImpl implements AccountInfoService {
             log.info("bank2 confirm 已经执行，无需重复执行...xid:{}",transId);
             return ;
         }
+
+        //模拟运行时异常，触发cancel操作回滚
+//        Integer.valueOf("QWQEQW");
+
         //增加金额
         accountMapper.addAccountBalance(accountNo,amount);
         //增加一条confirm日志，用于幂等
