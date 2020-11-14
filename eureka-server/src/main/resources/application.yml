@@ -1,0 +1,17 @@
+server:
+  port: 1001
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    hostname: localhost
+  server:
+    # 默认是true，调整为false，关闭eureka的自我保护
+    enable-self-preservation: false
+    # 每隔 4 秒清理服务列表 （默认值 60*1000 是1分钟）
+    eviction-interval-timer-in-ms: 4000
+
